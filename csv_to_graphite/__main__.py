@@ -21,6 +21,13 @@ OTHER_TIMEKEYS = ["Time"]
 
 
 def main(csv_path, prefix, fields):
+    if str(fields) == fields:  # if fields is str
+        if ',' in fields:
+            # multiple fields from CLI
+            fields = fields.split(',')
+        else:
+            # one field from CLI
+            fields = [fields]
     print('loading {} to {} from file \n{}'.format(fields, prefix, csv_path))
     carbon = GraphiteInterface.GraphiteInterface(HOSTNAME, PORT)
 

@@ -12,10 +12,7 @@ _csv_to_graphite.py /path/2/file.csv graphite.var.name.heir col,names,to,load
 import csv
 import sys
 
-try:  # w/in airflow
-    from imars_dags.dags.csvs_to_graphite import GraphiteInterface
-except ImportError:  # as script
-    import GraphiteInterface
+from csv_to_graphite import GraphiteInterface
 
 
 HOSTNAME = "graphitemaster"  # TODO

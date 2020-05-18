@@ -55,5 +55,4 @@ setup(
     long_description=long_description,
     install_requires=_install_requires,
     tests_require=_tests_require,
-    extras_require=_extras_require, 
 )
